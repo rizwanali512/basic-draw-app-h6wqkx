@@ -1,0 +1,38 @@
+<div>Create: 
+    <app-shape-type (onTypeChange)="setType($event)"></app-shape-type>
+</div>
+
+<svg class="shapeCanvas" xmlns:ct="http://gionkunz.github.com/chartist-js/ct" style="  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Ubuntu_alternative_background.svg/640px-Ubuntu_alternative_background.svg.png);"
+  (mousedown)="startDrawing($event)" 
+  (mouseup)="stopDrawing($event)"
+  (mousemove)="keepDrawing($event)"
+>
+
+<ng-container *ngFor="let shape of shapesToDraw">
+  <!-- <rect class="shape draggable"  style="cursor: move;" *ngIf="shape.type=='rectangle'" 
+   [style.stroke-width]="shape==(currentShape|async)?2:1"  
+   [attr.x]="shape.x" 
+   [attr.y]="shape.y" 
+   [attr.width]="shape.w"       
+   [attr.height]="shape.h"></rect> -->
+   <!-- <text  [attr.x]="createdShape?.x + createdShape?.w / 2"
+   [attr.y]="createdShape?.y + createdShape?.h / 2"  text-anchor="middle">TEXT</text>      -->
+   <g> 
+    <rect class="shape draggable"  style="cursor: move;" *ngIf="shape.type=='rectangle'" 
+    [style.stroke-width]="shape==(currentShape|async)?2:1"  
+    [attr.x]="shape.x" 
+    [attr.y]="shape.y" 
+    [attr.width]="shape.w"       
+    [attr.height]="shape.h"></rect>
+     <text  [attr.x]="x" [attr.y]="y" font-family="Verdana" font-size="35" fill="blue">{{shape?.text}}</text>
+     <foreignObject [attr.x]="x" [attr.y]="y"  width="100" height="100">
+       <title>dsfsdfds</title>
+       
+      <!-- <div xmlns="http://www.w3.org/1999/xhtml" class="jstree"> -->
+                      <!-- <div>TestContent</div> -->
+                  <!-- </div> -->
+        </foreignObject>
+  </g>
+  
+</ng-container> 
+</svg>

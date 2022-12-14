@@ -1,0 +1,12 @@
+<!-- <div>
+	<select (change)="shapeChanged()" [(ngModel)]="localCurrent" size="5">
+    <option *ngFor="let shape of shapesToEdit" [ngValue]="shape"
+       >{{shape|json}}</option>
+</select>
+</div> -->
+
+<div>x: <input [(ngModel)]="localCurrent.x" /></div>
+<div>y: <input [(ngModel)]="localCurrent.y" /></div>
+<div>w: <input [(ngModel)]="localCurrent.w" /></div>
+<div>h: <input [(ngModel)]="localCurrent.h" /></div>
+<div>Text: <input [(ngModel)]="localCurrent.text" /></div>

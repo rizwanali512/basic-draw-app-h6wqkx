@@ -1,0 +1,11 @@
+.shapeCanvas{
+   height:300px;
+   border:solid;
+   border-color:lightgrey;
+}
+
+.shape{
+  fill-opacity:0;
+  stroke:black;
+  stroke-width:1;
+}
